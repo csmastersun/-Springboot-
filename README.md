@@ -53,4 +53,4 @@
 
 ## 作者联系方式
 adsun526
-![二维码](./images/author.JPG)
+![二维码](./images/author.png)
