@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.tangyi.user.mapper.sys.TenantMapper">
+    <resultMap id="tenantResultMap" type="com.github.tangyi.api.user.model.Tenant">
+        <id column="id" property="id"/>
+        <result column="tenant_code" property="tenantCode"/>
+        <result column="tenant_name" property="tenantName"/>
+        <result column="tenant_desc" property="tenantDesc"/>
+        <result column="status" property="status"/>
+        <result column="role_id" property="roleId"/>
+        <result column="image_id" property="imageId"/>
+        <result column="creator" property="creator"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="operator" property="operator"/>
+        <result column="is_deleted" jdbcType="BIT" property="isDeleted" />
+    </resultMap>
+
+    <select id="findPage" resultMap="tenantResultMap">
+        SELECT * FROM sys_tenant WHERE is_deleted = 0
+        <if test="params != null">
+            <if test="params.tenantName != null and params.tenantName != ''">
+                AND (tenant_name LIKE CONCAT('%',#{params.tenantName},'%'))
+            </if>
+            <if test="params.status != null">
+                AND status = #{params.status}
+            </if>
+        </if>
+        <choose>
+            <when test="params.sortField != null and params.sortField != '' and params.sortOrder != null and params.sortOrder != ''">
+                ORDER BY #{params.sortField} #{params.sortOrder}
+            </when>
+            <otherwise>
+                ORDER BY update_time DESC
+            </otherwise>
+        </choose>
+    </select>
+
+    <select id="getByTenantCode" resultMap="tenantResultMap">
+        SELECT * FROM sys_tenant a
+        WHERE a.tenant_code = #{tenantCode} AND a.is_deleted = 0 AND a.status = 1
+    </select>
+
+    <delete id="delete">
+        UPDATE sys_tenant SET is_deleted = 1, operator = #{operator},
+                              update_time = #{updateTime, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        WHERE id = #{id}
+    </delete>
+
+    <select id="tenantCount" resultType="Integer">
+        SELECT COUNT(1) FROM sys_tenant a WHERE a.is_deleted = 0 AND a.status = 1
+    </select>
+</mapper>

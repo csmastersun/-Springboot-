@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.github.tangyi.user.UserServiceApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-12T02:19:05" hostname="C02FR6VBMD6R" time="1.199">
+  <properties/>
+  <testcase name="testTokenLogin()" classname="com.github.tangyi.user.UserServiceApplicationTests" time="1.199"/>
+  <system-out><![CDATA[SG_DB_USER_HOST=127.0.0.1
+SG_DB_USER_NAME=sg-exam-user
+SG_DB_USER_USERNAME=root
+SG_DB_USER_PASSWORD=12345678
+SEND_SMS=false
+   _______  _______          _______  __   __  _______  __   __
+  |       ||       |        |       ||  |_|  ||   _   ||  |_|  |
+  |  _____||    ___|  ____  |    ___||       ||  |_|  ||       |
+  | |_____ |   | __  |____| |   |___ |       ||       ||       |
+  |_____  ||   ||  |        |    ___| |     | |       ||       |
+   _____| ||   |_| |        |   |___ |   _   ||   _   || ||_|| |
+  |_______||_______|        |_______||__| |__||__| |__||_|   |_|
+ :: SG-EXAM ]]>&#x1f913;<![CDATA[  :: Running Spring Boot 2.7.1 ::
+ :: https://gitee.com/wells2333/sg-exam ::
+2023-03-12 10:18:52.866  WARN 30072 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/Users/i551096/.gradle/caches/modules-2/files-2.1/org.json/json/20140107/d1ffca6e2482b002702c6a576166fd685e3370e3/json-20140107.jar!/org/json/JSONObject.class
+	jar:file:/Users/i551096/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2023-03-12 10:18:52.883  INFO 30072 --- [    Test worker] c.g.t.user.UserServiceApplicationTests   : Starting UserServiceApplicationTests using Java 11.0.18 on C02FR6VBMD6R with PID 30072 (started by i551096 in /Users/i551096/Dev/bishe/sg-exam/sg-user-service)
+2023-03-12 10:18:52.883 DEBUG 30072 --- [    Test worker] c.g.t.user.UserServiceApplicationTests   : Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-03-12 10:18:52.884  INFO 30072 --- [    Test worker] c.g.t.user.UserServiceApplicationTests   : The following 1 profile is active: "dev"
+2023-03-12 10:18:52.907  WARN 30072 --- [    Test worker] o.s.b.c.config.ConfigDataEnvironment     : Property 'spring.profiles' imported from location 'file [/Users/i551096/Dev/bishe/sg-exam/config-repo/sg-user-service.yml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: URL [file:/Users/i551096/Dev/bishe/sg-exam/config-repo/sg-user-service.yml] - 101:13]
+2023-03-12 10:18:52.907  WARN 30072 --- [    Test worker] o.s.b.c.config.ConfigDataEnvironment     : Property 'spring.profiles' imported from location 'file [/Users/i551096/Dev/bishe/sg-exam/config-repo/sg-user-service.yml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: URL [file:/Users/i551096/Dev/bishe/sg-exam/config-repo/sg-user-service.yml] - 78:13]
+2023-03-12 10:18:52.907  WARN 30072 --- [    Test worker] o.s.b.c.config.ConfigDataEnvironment     : Property 'spring.profiles' imported from location 'file [/Users/i551096/Dev/bishe/sg-exam/config-repo/application.yml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: URL [file:/Users/i551096/Dev/bishe/sg-exam/config-repo/application.yml] - 98:18]
+2023-03-12 10:18:55.601  WARN 30072 --- [    Test worker] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.github.tangyi]' package. Please check your configuration.
+2023-03-12 10:18:55.883  INFO 30072 --- [    Test worker] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2023-03-12 10:18:55.926  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource Annotations [org.springframework.boot.test.autoconfigure.properties.AnnotationsPropertySource] to EncryptableEnumerablePropertySourceWrapper
+2023-03-12 10:18:55.955  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2023-03-12 10:18:55.955  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource test [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-12 10:18:55.955  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource vcap [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-12 10:18:55.956  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource Inlined Test Properties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-12 10:18:55.956  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource active-test-profiles [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-12 10:18:55.956  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2023-03-12 10:18:55.956  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2023-03-12 10:18:55.956  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-12 10:18:55.957  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-12 10:18:55.957  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2023-03-12 10:18:55.957  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource Config resource 'file [/Users/i551096/Dev/bishe/sg-exam/config-repo/sg-user-service.yml]' via location 'file:/Users/i551096/Dev/bishe/sg-exam/config-repo/sg-user-service.yml' (document #1) [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-12 10:18:55.957  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource Config resource 'file [/Users/i551096/Dev/bishe/sg-exam/config-repo/sg-user-service.yml]' via location 'file:/Users/i551096/Dev/bishe/sg-exam/config-repo/sg-user-service.yml' (document #0) [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-12 10:18:55.957  INFO 30072 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource Config resource 'file [/Users/i551096/Dev/bishe/sg-exam/config-repo/application.yml]' via location 'file:/Users/i551096/Dev/bishe/sg-exam/config-repo/application.yml' (document #0) [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-03-12 10:18:56.729  INFO 30072 --- [    Test worker] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2023-03-12 10:18:56.732  INFO 30072 --- [    Test worker] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2023-03-12 10:18:59.132  INFO 30072 --- [    Test worker] c.g.t.u.service.CommonExecutorService    : Initializing common executor
+2023-03-12 10:18:59.136  INFO 30072 --- [    Test worker] c.g.t.u.service.CommonExecutorService    : Init common executor finished, coreSize: 13
+2023-03-12 10:18:59.137  INFO 30072 --- [    Test worker] c.g.t.u.service.CommonExecutorService    : Initializing exam executor
+2023-03-12 10:18:59.137  INFO 30072 --- [    Test worker] c.g.t.u.service.CommonExecutorService    : Init exam executor finished, coreSize: 13
+2023-03-12 10:18:59.137  INFO 30072 --- [    Test worker] c.g.t.u.service.CommonExecutorService    : Initializing subject executor
+2023-03-12 10:18:59.137  INFO 30072 --- [    Test worker] c.g.t.u.service.CommonExecutorService    : Init subject executor finished, coreSize: 13
+2023-03-12 10:18:59.138  INFO 30072 --- [    Test worker] c.g.t.u.service.CommonExecutorService    : Initializing submit exam executor
+2023-03-12 10:18:59.138  INFO 30072 --- [    Test worker] c.g.t.u.service.CommonExecutorService    : Init submit exam executor finished, coreSize: 13
+2023-03-12 10:18:59.138  INFO 30072 --- [    Test worker] c.g.t.u.service.CommonExecutorService    : Initializing import executor
+2023-03-12 10:18:59.138  INFO 30072 --- [    Test worker] c.g.t.u.service.CommonExecutorService    : Init import executor finished, coreSize: 13
+2023-03-12 10:19:00.558  WARN 30072 --- [    Test worker] t.m.m.m.resolve.DefaultEntityResolve     : 通用 Mapper 警告信息: <[EntityColumn{table=exam_course_knowledge_point, property='learnHour', column='learn_hour', javaType=int, jdbcType=null, typeHandler=null, id=false, identity=false, blob=false, generator='null', orderBy='null', orderPriority='0', insertable=true, updatable=true, order=DEFAULT}]> 使用了基本类型，基本类型在动态 SQL 中由于存在默认值，因此任何时候都不等于 null，建议修改基本类型为对应的包装类型!
+2023-03-12 10:19:01.858  INFO 30072 --- [    Test worker] c.g.t.common.config.EmbeddedRedisConfig  : Starting embedded redis...
+2023-03-12 10:19:02.456 ERROR 30072 --- [    Test worker] c.g.t.common.config.EmbeddedRedisConfig  : Failed to start embedded redis
+
+java.lang.RuntimeException: Can't start redis server. Check logs for details.
+	at redis.embedded.AbstractRedisInstance.awaitRedisServerReady(AbstractRedisInstance.java:61)
+	at redis.embedded.AbstractRedisInstance.start(AbstractRedisInstance.java:39)
+	at redis.embedded.RedisServer.start(RedisServer.java:9)
+	at com.github.tangyi.common.config.EmbeddedRedisConfig.start(EmbeddedRedisConfig.java:29)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:132)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+
+2023-03-12 10:19:02.960  WARN 30072 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/cloudfoundryapplication/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-03-12 10:19:04.582  INFO 30072 --- [    Test worker] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2023-03-12 10:19:04.599  INFO 30072 --- [    Test worker] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2023-03-12 10:19:04.600  INFO 30072 --- [    Test worker] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2023-03-12 10:19:04.600  INFO 30072 --- [    Test worker] t.m.m.autoconfigure.MapperCacheDisabler  : Clear EntityHelper entityTableMap cache.
+2023-03-12 10:19:05.443  WARN 30072 --- [    Test worker] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2023-03-12 10:19:05.669 DEBUG 30072 --- [    Test worker] c.g.t.auth.filter.ValidateCodeFilter     : Filter 'validateCodeFilter' configured for use
+2023-03-12 10:19:05.692  INFO 30072 --- [    Test worker] org.xnio                                 : XNIO version 3.8.7.Final
+2023-03-12 10:19:05.704  INFO 30072 --- [    Test worker] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.7.Final
+2023-03-12 10:19:05.787  INFO 30072 --- [    Test worker] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+2023-03-12 10:19:05.862  INFO 30072 --- [    Test worker] c.g.t.user.UserServiceApplicationTests   : Started UserServiceApplicationTests in 14.636 seconds (JVM running for 18.218)
+2023-03-12 10:19:05.901  WARN 30072 --- [       Thread-5] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-03-12 10:19:06.108 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.ExaminationMapper.findAllIds   : ==>  Preparing: SELECT a.id FROM exam_examination a WHERE a.is_deleted = 0
+2023-03-12 10:19:06.134 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.ExaminationMapper.findAllIds   : ==> Parameters: 
+2023-03-12 10:19:06.159 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.ExaminationMapper.findAllIds   : <==      Total: 3
+2023-03-12 10:19:06.171 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : ==>  Preparing: SELECT * FROM exam_fav_start_count a WHERE a.target_id = ? AND a.target_type = ?
+2023-03-12 10:19:06.172 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : ==> Parameters: 1(Long), 0(Integer)
+2023-03-12 10:19:06.178 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : <==      Total: 1
+2023-03-12 10:19:06.431  INFO 30072 --- [       Thread-5] c.g.t.exam.service.fav.UserFavService    : set start count success, id: 1, targetType: 0, value: 8
+2023-03-12 10:19:06.433  INFO 30072 --- [       Thread-5] c.g.t.exam.service.fav.UserFavService    : set fav count success, id: 1, targetType: 0, value: 0
+2023-03-12 10:19:06.433 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : ==>  Preparing: SELECT * FROM exam_fav_start_count a WHERE a.target_id = ? AND a.target_type = ?
+2023-03-12 10:19:06.434 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : ==> Parameters: 2(Long), 0(Integer)
+2023-03-12 10:19:06.435 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : <==      Total: 1
+2023-03-12 10:19:06.438  INFO 30072 --- [       Thread-5] c.g.t.exam.service.fav.UserFavService    : set start count success, id: 2, targetType: 0, value: 3
+2023-03-12 10:19:06.440  INFO 30072 --- [       Thread-5] c.g.t.exam.service.fav.UserFavService    : set fav count success, id: 2, targetType: 0, value: 0
+2023-03-12 10:19:06.440 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : ==>  Preparing: SELECT * FROM exam_fav_start_count a WHERE a.target_id = ? AND a.target_type = ?
+2023-03-12 10:19:06.441 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : ==> Parameters: 3(Long), 0(Integer)
+2023-03-12 10:19:06.442 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : <==      Total: 0
+2023-03-12 10:19:06.447 DEBUG 30072 --- [       Thread-5] c.g.t.e.mapper.CourseMapper.findAllIds   : ==>  Preparing: SELECT a.id FROM exam_course a WHERE a.is_deleted = 0
+2023-03-12 10:19:06.447 DEBUG 30072 --- [       Thread-5] c.g.t.e.mapper.CourseMapper.findAllIds   : ==> Parameters: 
+2023-03-12 10:19:06.451 DEBUG 30072 --- [       Thread-5] c.g.t.e.mapper.CourseMapper.findAllIds   : <==      Total: 2
+2023-03-12 10:19:06.452 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : ==>  Preparing: SELECT * FROM exam_fav_start_count a WHERE a.target_id = ? AND a.target_type = ?
+2023-03-12 10:19:06.452 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : ==> Parameters: 1(Long), 2(Integer)
+2023-03-12 10:19:06.453 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : <==      Total: 0
+2023-03-12 10:19:06.454 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : ==>  Preparing: SELECT * FROM exam_fav_start_count a WHERE a.target_id = ? AND a.target_type = ?
+2023-03-12 10:19:06.455 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : ==> Parameters: 2(Long), 2(Integer)
+2023-03-12 10:19:06.456 DEBUG 30072 --- [       Thread-5] c.g.t.e.m.E.findByTarget                 : <==      Total: 0
+2023-03-12 10:19:06.457  INFO 30072 --- [       Thread-5] c.g.t.config.CustomApplicationListener   : Init start and fav count successfully, took: 598ms
+2023-03-12 10:19:06.489 DEBUG 30072 --- [    Test worker] c.g.t.u.m.s.U.selectByPrimaryKey         : ==>  Preparing: SELECT ID,CREATOR,create_time,OPERATOR,update_time,is_deleted,tenant_code,name,phone,avatar_id,email,gender,born,user_desc,status,dept_id,parent_uid,street_id,county_id,city_id,province_id,login_time,lock_time,wechat,family_role,signature FROM sys_user WHERE ID = ?
+2023-03-12 10:19:06.490 DEBUG 30072 --- [    Test worker] c.g.t.u.m.s.U.selectByPrimaryKey         : ==> Parameters: 1(Long)
+2023-03-12 10:19:06.496 DEBUG 30072 --- [    Test worker] c.g.t.u.m.s.U.selectByPrimaryKey         : <==      Total: 1
+2023-03-12 10:19:06.497 DEBUG 30072 --- [    Test worker] c.g.t.u.m.s.UserRoleMapper.getByUserId   : ==>  Preparing: SELECT * FROM sys_user_role a WHERE a.user_id = ?
+2023-03-12 10:19:06.497 DEBUG 30072 --- [    Test worker] c.g.t.u.m.s.UserRoleMapper.getByUserId   : ==> Parameters: 1(Long)
+2023-03-12 10:19:06.501 DEBUG 30072 --- [    Test worker] c.g.t.u.m.s.UserRoleMapper.getByUserId   : <==      Total: 1
+2023-03-12 10:19:06.525 DEBUG 30072 --- [    Test worker] c.g.t.u.m.sys.RoleMapper.findListById    : ==>  Preparing: SELECT * FROM sys_role a WHERE a.id IN ( ? )
+2023-03-12 10:19:06.525 DEBUG 30072 --- [    Test worker] c.g.t.u.m.sys.RoleMapper.findListById    : ==> Parameters: 1(Long)
+2023-03-12 10:19:06.530 DEBUG 30072 --- [    Test worker] c.g.t.u.m.sys.RoleMapper.findListById    : <==      Total: 1
+2023-03-12 10:19:06.965  INFO 30072 --- [    Test worker] c.g.t.auth.service.UserTokenService      : Login successfully, identify: admin, loginType: PWD
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /login
+       Parameters = {grant_type=[password], scope=[read], ignoreCode=[1], username=[admin], credential=[lBTqrKS0kZixOFXeZ0HRng==], remember=[false]}
+          Headers = [Tenant-Code:"gitee"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=utf-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json;charset=utf-8
+             Body = {"message":"SUCCESS","code":0,"result":{"hasPhone":true,"tenantCode":"gitee","token":"Bearer eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAAAI2MOw-CMBRG_8udWbC0BTYjDiS-YkwcTR-3pAaLgctAjP_d1snR8Ts553vBNGuoQdmHD5DBOPQY5_m4297Wzb49ROYtBvJu-dH6ofPhsjyTe7o2kRAGFWgz2IQ6T4jfMg7DWKEdGiaMLZhhJVYoK6scX-VSaRG9ecKxTW6eIkVQ50KWvJS8EBncyf9z8_4AZPeQ_cwAAAA.52R37vyGqUOvz1lO16OVzPHnAcez276AsQ629JNeMpcBIBzzNbODfMSt0FCwMIDP3-A_XLaXNK383KlDQJgYPw"}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+]]></system-err>
+</testsuite>

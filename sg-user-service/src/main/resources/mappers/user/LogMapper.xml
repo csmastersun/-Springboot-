@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.tangyi.user.mapper.sys.LogMapper">
+    <resultMap id="logResultMap" type="com.github.tangyi.common.model.Log">
+        <id column="id" property="id"/>
+        <result column="type" property="type"/>
+        <result column="title" property="title"/>
+        <result column="ip" property="ip"/>
+        <result column="user_agent" property="userAgent"/>
+        <result column="request_uri" property="requestUri"/>
+        <result column="method" property="method"/>
+        <result column="params" property="params"/>
+        <result column="exception" property="exception"/>
+        <result column="service_id" property="serviceId"/>
+        <result column="time" property="time"/>
+        <result column="creator" property="creator"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="operator" property="operator"/>
+        <result column="is_deleted" jdbcType="BIT" property="isDeleted" />
+        <result column="tenant_code" property="tenantCode"/>
+    </resultMap>
+
+    <select id="findPage" resultMap="logResultMap">
+        SELECT * FROM sys_log WHERE is_deleted = 0
+        <if test="params != null">
+            <if test="params.title != null and params.title != ''">
+                AND (title like CONCAT('%',#{params.title},'%'))
+            </if>
+            <if test="params.tenantCode != null and params.tenantCode != ''">
+                AND tenant_code = #{params.tenantCode}
+            </if>
+        </if>
+        <choose>
+            <when test="params.sortField != null and params.sortField != '' and params.sortOrder != null and params.sortOrder != ''">
+                ORDER BY #{params.sortField} #{params.sortOrder}
+            </when>
+            <otherwise>
+                ORDER BY update_time DESC
+            </otherwise>
+        </choose>
+    </select>
+
+    <delete id="delete">
+        DELETE FROM sys_log WHERE id = #{id}
+    </delete>
+</mapper>
